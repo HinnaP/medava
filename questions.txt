@@ -1,1 +1,7 @@
-Your questions here.
+1. Different Medicine types each define their own temperature limits, would it ever make sense to store those limits in a shared parent class instead of overriding them in every subclass?
+
+2. The Transporter checks if an item can be loaded based on a temperature range. If more conditions were added later (like weight or size limits), would updating the load() method be the best approach, or should that logic live inside the items themselves?
+
+3. The Pharmacy manually creates each Medicine object before loading it. Would using a helper method or factory to create these objects make the code easier to extend if more medicines were added?
+
+4. The Transporter stores items in an ArrayList and unloads from the front. If the list became large, would another data structure like a queue be more efficient, or does it not matter much for this assignment?
