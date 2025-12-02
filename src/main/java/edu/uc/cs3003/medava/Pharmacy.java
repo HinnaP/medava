@@ -15,6 +15,9 @@ public class Pharmacy {
      */
     public boolean send(Transporter t)
     {
+        // Add exactly one blank line before any other output
+        System.out.println();
+
         Medicine advil = new Ibuprofen();
         if (t.load(advil))
         {
