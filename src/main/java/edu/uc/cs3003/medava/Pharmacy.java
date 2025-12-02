@@ -1,72 +1,48 @@
 package edu.uc.cs3003.medava;
 
 public class Pharmacy {
-
-    private String mPharmacyName;
-
     public Pharmacy(String pharmacyName) {
         mPharmacyName = pharmacyName;
     }
 
-    /**
-     * Loads medicines and devices onto the transporter.
-     * @param t The transporter to load.
-     * @return true if all items were loaded successfully.
-     */
-    public boolean send(Transporter t)
-    {
-        // Add exactly one blank line before any other output
-        System.out.println();
-
+    public boolean send(Transporter t) {
         Medicine advil = new Ibuprofen();
-        if (t.load(advil))
-        {
-            System.out.printf("Sending %s on the %s transporter.\n",
-                    advil.getMedicineName(), t.getTransporterName());
-        }
-        else
-        {
-            System.out.printf("Cannot load %s on to the %s transporter.\n",
-                    advil.getMedicineName(), t.getTransporterName());
+        if (t.load(advil)) {
+            System.out.println(String.format("Sending %s on the %s transporter.", advil.getMedicineName(),
+                    t.getTransporterName()));
+        } else {
+            System.out.println(String.format("Cannot load %s on to the %s transporter.", advil.getMedicineName(),
+                    t.getTransporterName()));
             return false;
         }
 
         Medicine activase = new Thrombolytic();
-        if (t.load(activase))
-        {
-            System.out.printf("Sending %s on the %s transporter.\n",
-                    activase.getMedicineName(), t.getTransporterName());
-        }
-        else
-        {
-            System.out.printf("Cannot load %s on to the %s transporter.\n",
-                    activase.getMedicineName(), t.getTransporterName());
+        if (t.load(activase)) {
+            System.out.println(String.format("Sending %s on the %s transporter.", activase.getMedicineName(),
+                    t.getTransporterName()));
+        } else {
+            System.out.println(String.format("Cannot load %s on to the %s transporter.", activase.getMedicineName(),
+                    t.getTransporterName()));
             return false;
         }
 
         Medicine oxycontin = new Oxycodone();
-        if (t.load(oxycontin))
-        {
-            System.out.printf("Sending %s on the %s transporter.\n",
-                    oxycontin.getMedicineName(), t.getTransporterName());
-        }
-        else
-        {
-            System.out.printf("Cannot load %s on to the %s transporter.\n",
-                    oxycontin.getMedicineName(), t.getTransporterName());
+        if (t.load(oxycontin)) {
+            System.out.println(String.format("Sending %s on the %s transporter.", oxycontin.getMedicineName(),
+                    t.getTransporterName()));
+        } else {
+            System.out.println(String.format("Cannot load %s on to the %s transporter.", oxycontin.getMedicineName(),
+                    t.getTransporterName()));
             return false;
         }
 
         Jarvik heart = new Jarvik("01j9a9lk71");
-        if (t.load(heart))
-        {
-            System.out.printf("Sending %s on the %s transporter.\n",
-                    heart.getMedicineName(), t.getTransporterName());
-        }
-        else
-        {
-            System.out.printf("Cannot load %s on to the %s transporter.\n",
-                    heart.getMedicineName(), t.getTransporterName());
+        if (t.load(heart)) {
+            System.out.println(String.format("Sending %s on the %s transporter.", heart.getMedicineName(),
+                    t.getTransporterName()));
+        } else {
+            System.out.println(String.format("Cannot load %s on to the %s transporter.", heart.getMedicineName(),
+                    t.getTransporterName()));
             return false;
         }
 
@@ -76,4 +52,6 @@ public class Pharmacy {
     public String pharmacyName() {
         return mPharmacyName;
     }
+
+    private String mPharmacyName;
 }
