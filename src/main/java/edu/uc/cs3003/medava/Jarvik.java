@@ -1,26 +1,27 @@
 package edu.uc.cs3003.medava;
-
-public abstract class Medicine implements Shippable {
-    public abstract MedicineSchedule getSchedule();
-    private String mMedicineName;
+public class Jarvik implements Shippable {
+    Jarvik(String deviceSerialNumber) {
+      serialNumber = deviceSerialNumber;
+    }
+  
     public String getMedicineName() {
-        return mMedicineName;
-      }
-    public Medicine(String medicineName) {
-         mMedicineName = medicineName;
+      return "Jarvik Artificial Heart";
     }
-    public double minimumTemperature() {
-        return 0.0;
+  
+    public MedicineSchedule getSchedule() {
+      return MedicineSchedule.Uncontrolled;
     }
-
-    public double maximumTemperature() {
-        return 100.0;
+  
+    public String getSerialNumber() {
+      return serialNumber;
     }
+  
     public boolean isTemperatureRangeAcceptable(Double lowTemperature, Double highTemperature) {
-        if (this.minimumTemperature() <= lowTemperature &&
-                highTemperature <= this.maximumTemperature()) {
-            return true;
-        }
-        return false;
+      if (30.0 <= lowTemperature && highTemperature <= 90.0) {
+        return true;
+      }
+      return false;
     }
-}
+  
+    private String serialNumber;
+  }
