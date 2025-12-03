@@ -4,7 +4,6 @@ public class Pharmacy {
     public Pharmacy(String pharmacyName) {
         mPharmacyName = pharmacyName;
     }
-
     public boolean send(Transporter t) {
         Medicine advil = new Ibuprofen();
         if (t.load(advil)) {
